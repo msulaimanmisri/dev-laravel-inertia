@@ -1,14 +1,18 @@
 <?php
 
-use App\Http\Controllers\Pages\PageController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia as inertia;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
- */
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
 
-Route::get('/', [PageController::class, 'index'])->name('page.index');
-Route::get('/clients', [PageController::class, 'clients'])->name('page.clients');
-Route::get('/services', [PageController::class, 'services'])->name('page.services');
+Route::get('/', function () {
+    return view('welcome');
+});
