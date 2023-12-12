@@ -1,9 +1,13 @@
 <template>
     <div>
-    <h1>Hello World</h1>
-</div>
+        <h1>Hello, {{ username }}</h1>
+    </div>
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        username: String,
+    }
+};
 </script>
