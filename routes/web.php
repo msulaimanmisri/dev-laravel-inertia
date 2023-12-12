@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Pages\PageController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia as inertia;
 /*
@@ -8,9 +9,6 @@ use Inertia\Inertia as inertia;
 |--------------------------------------------------------------------------
  */
 
-Route::get('/', function () {
-    $username = "Sulaiman Misri";
-    $frameworks = ['Laravel', 'Vue', 'Inertia'];
-
-    return inertia::render('Index', compact('username', 'frameworks'));
-});
+Route::get('/', [PageController::class, 'index'])->name('page.index');
+Route::get('/clients', [PageController::class, 'clients'])->name('page.clients');
+Route::get('/services', [PageController::class, 'services'])->name('page.services');

@@ -1,19 +1,13 @@
 <template>
     <div>
-        <h1>Welcome, {{ username }}</h1>
-        <p>Ini adalah Framework yang anda gunakan dalam pembikinan website</p>
-
-        <ul>
-            <li v-for="framework in frameworks" v-text="framework"></li>
-        </ul>
+        <h1>Home</h1>
+        <Nav></Nav>
     </div>
 </template>
 
 <script>
+import { Nav } from "../Shared/Nav";
 export default {
-    props: {
-        username: String,
-        frameworks: Array,
-    }
+    components: { Nav },
 };
 </script>
